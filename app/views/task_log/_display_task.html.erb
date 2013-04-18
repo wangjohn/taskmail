@@ -1,0 +1,14 @@
+<div class="task_log">
+  <div class="field">
+    <div class="label">Action:</div>
+    <div class="data"><%= task_log.action -%></div>
+  </div>
+  <div class="field">
+    <div class="label">User:</div>
+    <div class="data"><%= task_log.user.try(:name) -%></div>
+  </div>
+  <div class="field">
+    <div class="label">Task:</div>
+    <div class="data"><%= link_to task_log.task.try(:name), task_log.task -%></div>
+  </div>
+</div>
