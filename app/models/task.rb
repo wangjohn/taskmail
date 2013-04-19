@@ -3,6 +3,8 @@ class Task < ActiveRecord::Base
 
   validates_presence_of :name
 
+  has_many :task_logs
+
   default_scope { where(:finished => false) }
 
   def finish_task!(user_id = nil)

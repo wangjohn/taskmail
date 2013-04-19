@@ -1,10 +1,13 @@
 class TaskLog < ActiveRecord::Base
 
+  belongs_to :user
+  belongs_to :task
+
   attr_accessible :user_id, :task_id, :action
 
   # Gets the most recent tasks
-  def self.most_recent(days_ago)
-    self.where(:created_at > Time.now - days_ago.days)
+  def self.most_recent(days_ago = 14)
+    self.where("created_at > ?", Time.now - days_ago.days)
   end
 
   # Gets the tasks belonging to a particular user

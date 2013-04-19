@@ -1,0 +1,9 @@
+<h2><%= @task_header -%></h2>
+
+<div class="display_tasks">
+  <% if @task_logs -%>
+    <%= render :partial => "display_task", :collection => @task_logs, as: :task_log -%>
+  <% else -%>
+    No logs to display
+  <% end -%>
+</div>
