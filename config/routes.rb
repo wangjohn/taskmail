@@ -1,6 +1,12 @@
 Taskmail::Application.routes.draw do
   devise_for :users
-  resources :tasks
+  resources :tasks do
+    member do
+      get :finish
+    end
+  end
+
+  get 'task_log' => 'task_log#user_tasks'
 
   root to: 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

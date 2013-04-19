@@ -1,12 +1,12 @@
 class Task < ActiveRecord::Base
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :finished
 
   validates_presence_of :name
 
   default_scope { where(:finished => false) }
 
-  def finish_task!
-    TaskLog.create(:task_id => self.id, :action => "finished", :user_id => current_user.id)
+  def finish_task!(user_id = nil)
+    TaskLog.create(:task_id => self.id, :action => "finished", :user_id => user_id)
     update_attributes(:finished => true)
   end
 end

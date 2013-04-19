@@ -1,5 +1,7 @@
 class TaskLog < ActiveRecord::Base
 
+  attr_accessible :user_id, :task_id, :action
+
   # Gets the most recent tasks
   def self.most_recent(days_ago)
     self.where(:created_at > Time.now - days_ago.days)
