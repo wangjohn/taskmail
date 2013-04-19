@@ -10,5 +10,6 @@
   </div>
 </div>
 <div class="tasks_link">
-  <%= link_to "Go to tasks", tasks_path -%>
+  <%= link_to "Go to tasks", tasks_path -%> |
+    <%= link_to "See task log", action: 'most_recent', controller: 'task_log'  -%>
 </div>

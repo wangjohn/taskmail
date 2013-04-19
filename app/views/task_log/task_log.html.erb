@@ -2,7 +2,15 @@
 
 <div class="display_tasks">
   <% if @task_logs -%>
-    <%= render :partial => "display_task", :collection => @task_logs, as: :task_log -%>
+    <table class="task_log_table">
+      <tr>
+        <th>Action</th>
+        <th>User Email</th>
+        <th>Task Name</th>
+        <th>Time of Action</th>
+      </tr>
+      <%= render :partial => "display_task", :collection => @task_logs, as: :task_log -%>
+    </table>
   <% else -%>
     No logs to display
   <% end -%>

@@ -7,6 +7,7 @@ Taskmail::Application.routes.draw do
   end
 
   get 'task_log' => 'task_log#most_recent'
+  get 'task_log/user_tasks' => 'task_log#user_tasks'
 
   root to: 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

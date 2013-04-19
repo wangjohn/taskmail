@@ -1,5 +1,4 @@
 class TaskLogController < ApplicationController
-
   def user_tasks
     @task_logs = TaskLog.user_tasklog(current_user.id)
     @task_header = "Task Log for #{current_user.email}"
